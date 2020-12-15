@@ -1,0 +1,87 @@
+[
+  {
+    "username": "nivida22",
+    "password": "$2a$12$SSndhHqdNs40niQEzIo/KuiIzOJXSwO4zJWsSnu3U/9JzXUWnUjG6",
+    "role": "admin"
+  },
+  {
+    "username": "Melia",
+    "password": "$2a$12$VGqsAo6HmgcZ3EOQL.RQaOt6s4NwRoKSNL2W45UlKkDkgOQEcOWMq",
+    "role": "admin"
+  },
+  {
+    "username": "Demetrice",
+    "password": "$2a$12$B.4gWwH16boxJyc6ANYwVOEC1GTiXr8TtZUlbY8PVA1xGpfTK90fC",
+    "role": "member"
+  },
+  {
+    "username": "Ligia",
+    "password": "$2a$12$8FvGG6mWKnB/JxNZrH0wr.i3JPPG5CF6ZnXo53lz5U5I/jNFeaB96",
+    "role": "member"
+  },
+  {
+    "username": "Maisha",
+    "password": "$2a$12$QCdRn//ijFkiJlM3TXkV/e2JWWpxZk1TlvXzh6RgxOw.W.xkIueCu",
+    "role": "member"
+  },
+  {
+    "username": "Cythia",
+    "password": "$2a$12$cvNpdYV0bvc5/I8JJX99iekfU4chkEvLPsU66uyGtcgY41Xv0CbF2",
+    "role": "member"
+  },
+  {
+    "username": "Arlie",
+    "password": "$2a$12$EG/tEaiheG5mwLEcpU/ovuz1NALVZ/HJ6tnW5l/vwnwZRjlA8eW7K",
+    "role": "member"
+  },
+  {
+    "username": "Andy",
+    "password": "$2a$12$HAiYaPWkAfXT7uTky6uhLOpKRxgfs1H12Lmr9Jdu6UmRbUaVPRv9e",
+    "role": "member"
+  },
+  {
+    "username": "Peg",
+    "password": "$2a$12$uTh6erUZIHtIp3g/zFebFOPZsv.ghIeIoxHbE3DH5IPZMYNF7Jg.W",
+    "role": "member"
+  },
+  {
+    "username": "Noble",
+    "password": "$2a$12$lJcudnh88DJxgQDtt4WuoOwUQ7tqKpGN.BeR6FF7wfK0/poyCBQoy",
+    "role": "member"
+  },
+  {
+    "username": "Willow",
+    "password": "$2a$12$mbx/Mfc6NQ7zKykwkvLf2OFAweoTxk4VJT.Q.U5EWVI5BMHfnfEyG",
+    "role": "member"
+  },
+  {
+    "username": "Corrinne",
+    "password": "$2a$12$/f/PUhGRuTWvzT.ALLj96uu8CHuWSA9Bq8.mEHd1AYPhY.iGOH/.K",
+    "role": "member"
+  },
+  {
+    "username": "Joseph",
+    "password": "$2a$12$U9l2wouiJiZnIKb/seyJn.Hi.qBFiN1NEjmTpOntbYwKlUal9pPq6",
+    "role": "member"
+  },
+  {
+    "username": "Daron",
+    "password": "$2a$12$j.fbPekfxSBz9VOktprhQesc6IUozj0NVHx3ulldZ0ACf3m1GJxl2",
+    "role": "member"
+  },
+  {
+    "username": "Anamaria",
+    "password": "$2a$12$YG0nXZF87L70AIAZiIVkYOb1lMFOCYoibm.x97mJ.0v1Hs9rIt7CO",
+    "role": "member"
+  },
+  {
+    "username": "Leonard",
+    "password": "$2a$12$4qQv/gHWgrJqFBfVP1VP/eppj68tJgBITB7gbiHaXfe.3UqClT8T.",
+    "role": "member"
+  },
+  {
+    "username": "Belia",
+    "password": "$2a$12$kvfW6YElOhn6l2qbgduq8eCGqPyLsdRrKhuLg4DXEcHRNJymtuZFq",
+    "role": "member"
+  }
+]

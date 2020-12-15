@@ -1,0 +1,21 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://www.drbsclasses.org/student3/node/Applicant",
+  "title": "Applicant Schema",
+  "description": "Applicant creating a membership",
+  "type": "object",
+  "properties": {
+    "username": {
+      "description": "unique username",
+      "type": "string",
+      "minimum": 6
+    },
+    "password": {
+      "description": "password of min length of 8 characters",
+      "type": "string",
+      "minimum": 8
+    }
+  },
+  "required": ["username", "password"],
+  "additionalProperties": false
+}

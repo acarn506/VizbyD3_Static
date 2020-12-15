@@ -1,0 +1,25 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://www.drbsclasses.org/student3/node/members",
+  "title": "Member Schema",
+  "description": "Members info being added by admin",
+  "type": "object",
+  "properties": {
+    "username": {
+      "description": "unique username",
+      "type": "string",
+      "minimum": 6
+    },
+    "password": {
+      "description": "password of min length of 8 characters",
+      "type": "string",
+      "minimum": 8
+    },
+    "role": {
+      "description": "users site access",
+      "type": "string"
+    }
+  },
+  "required": ["username", "password", "role"],
+  "additionalProperties": false
+}

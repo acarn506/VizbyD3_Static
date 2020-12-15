@@ -1,0 +1,12 @@
+[
+  {
+    "name": "State Data",
+    "source": "https://civilserviceusa.github.io/us-states/",
+    "year": "2017"
+  },
+  {
+    "name": "Avocado Prices",
+    "source": "http://www.hassavocadoboard.com/retail/volume-and-price-data",
+    "year": "2018"
+  }
+]

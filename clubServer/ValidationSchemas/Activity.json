@@ -1,0 +1,23 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://www.drbsclasses.org/student3/node/Activity",
+  "title": "Activity Schema",
+  "description": "Datasets to be viewed within the site",
+  "type": "object",
+  "properties": {
+    "name": {
+      "description": "Dataset name",
+      "type": "string"
+    },
+    "source": {
+      "description": "where the dataset was generated from",
+      "type": "string"
+    },
+    "year": {
+      "description": "year the dataset gathered",
+      "type": "string"
+    }
+  },
+  "required": ["name", "source"],
+  "additionalProperties": false
+}
