@@ -6,16 +6,17 @@ class Advocado extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      data: []
+      data: [],
+      loadData: false
     };
   }
 
   // fetch state data
   getAvocadoData() {
-    console.log(urlServer);
+    console.log(urlLocal);
     let that = this;
     // A promise for the response
-    let myRes = fetch(urlServer + "avocados");
+    let myRes = fetch(urlLocal + "avocados");
     // A promise for the body
     let myBody = myRes.then(function(res) {
       // Work with response
@@ -26,6 +27,7 @@ class Advocado extends React.Component {
 
     myBody.then(function(body) {
       let data = body;
+      console.log("data server", data);
       that.setState({ data: data });
       that.formatData();
     });
@@ -66,16 +68,20 @@ class Advocado extends React.Component {
     }
 
     this.setState({
-      data: reduceData
+      data: reduceData,
+      loadData: true
     });
   }
 
   render() {
-    return (
-      <>
-        <AvocadoChart data={this.state.data} />
-      </>
-    );
+    let avoChart = null;
+    if (this.state.loadData) {
+      avoChart = <AvocadoChart data={this.state.data} />;
+    } else {
+      avoChart = <h1>Loading Data...</h1>;
+    }
+
+    return <>{avoChart}</>;
   }
 }
 

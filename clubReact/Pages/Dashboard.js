@@ -19,7 +19,7 @@ class Dashboard extends React.Component {
   getBarData() {
     let that = this;
     // A promise for the response
-    let myRes = fetch(urlServer + "housePrices");
+    let myRes = fetch(urlLocal + "housePrices");
     // A promise for the body
     let myBody = myRes.then(function(res) {
       // Work with response
@@ -45,7 +45,7 @@ class Dashboard extends React.Component {
     let feature = event;
     let that = this;
     // A promise for the response
-    let myRes = fetch(urlServer + "housePrices/" + event);
+    let myRes = fetch(urlLocal + "housePrices/" + event);
     // A promise for the body
     let myBody = myRes.then(function(res) {
       // Work with response

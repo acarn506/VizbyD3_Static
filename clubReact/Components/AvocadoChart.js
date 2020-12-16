@@ -10,7 +10,7 @@ const margin = {
   left: 120,
   padding: 40
 };
-const width = 1000 - margin.left - margin.right,
+const width = window.innerWidth - margin.left - margin.right,
   height = 400 - margin.top - margin.bottom;
 
 function AvocadoChart(props) {
@@ -81,13 +81,24 @@ function AvocadoChart(props) {
     .append("g")
     .attr("class", "axis")
     .attr("transform", "translate(0," + (height - margin.padding) + ")")
-    .call(xAxis);
+    .call(xAxis)
+    .append("text")
+    .attr("class", "xlabel")
+    .attr("x", width)
+    .attr("y", -6)
+    .text("Date: Year-Month");
 
   svg
     .append("g")
     .attr("class", "axis")
     .attr("transform", "translate(" + margin.padding + ", 0)")
-    .call(yAxis);
+    .call(yAxis)
+    .append("text")
+    .attr("class", "ylabel")
+    .attr("transform", "rotate(-90)")
+    .attr("dy", ".71em")
+    .attr("y", 6)
+    .text("SalePrice ($)");
 
   //console.table(props.data, ["Date", "AveragePrice"]);
   return node.toReact();

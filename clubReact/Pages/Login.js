@@ -28,7 +28,7 @@ class Login extends React.Component {
       password: this.state.password
     };
     // A promise for the response
-    let myRes = fetch(urlServer + "login", {
+    let myRes = fetch(urlLocal + "login", {
       method: "POST",
       headers: {
         "Content-Type": "application/json"

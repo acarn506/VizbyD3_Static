@@ -16,7 +16,7 @@ class AdminMembership extends React.Component {
   getHandler() {
     let that = this;
     // A promise for the response
-    let myRes = fetch(urlServer + "members");
+    let myRes = fetch(urlLocal + "members");
     // A promise for the body
     let myBody = myRes.then(function(res) {
       // Work with response
@@ -47,7 +47,7 @@ class AdminMembership extends React.Component {
       role: this.state.role
     };
     // A promise for the response
-    let myRes = fetch(urlServer + "members", {
+    let myRes = fetch(urlLocal + "members", {
       method: "POST",
       headers: {
         "Content-Type": "application/json"
@@ -79,7 +79,7 @@ class AdminMembership extends React.Component {
     let member_id = event.target.value;
 
     // A promise for the response
-    let myRes = fetch(urlServer + "members/" + member_id, {
+    let myRes = fetch(urlLocal + "members/" + member_id, {
       method: "delete"
     });
     // A promise for the body

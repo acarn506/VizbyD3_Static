@@ -8,7 +8,7 @@ function Menu(props) {
 
   function logoutHandler() {
     // A promise for the response
-    let myRes = fetch(urlServer + "logout");
+    let myRes = fetch(urlLocal + "logout");
     // A promise for the body
     let myBody = myRes.then(function(res) {
       // Work with response

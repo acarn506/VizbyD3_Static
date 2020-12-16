@@ -12,7 +12,7 @@ class ClubActivities extends React.Component {
   getHandler() {
     let that = this;
     // A promise for the response
-    let myRes = fetch(urlServer + "activities");
+    let myRes = fetch(urlLocal + "activities");
     // A promise for the body
     let myBody = myRes.then(function(res) {
       // Work with response

@@ -21,7 +21,7 @@ class Membership extends React.Component {
       role: "member"
     };
     // A promise for the response
-    let myRes = fetch(urlServer + "applicant", {
+    let myRes = fetch(urlLocal + "applicant", {
       method: "POST",
       headers: {
         "Content-Type": "application/json"

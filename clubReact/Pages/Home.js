@@ -24,10 +24,10 @@ class Home extends React.Component {
 
   // fetch state data
   getStateData() {
-    console.log("fetch", urlServer);
+    console.log("fetch", urlLocal);
     let that = this;
     // A promise for the response
-    let myRes = fetch(urlServer + "states");
+    let myRes = fetch(urlLocal + "states");
     // A promise for the body
     let myBody = myRes.then(function(res) {
       // Work with response
