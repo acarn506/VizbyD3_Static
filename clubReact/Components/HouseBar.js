@@ -4,8 +4,11 @@ import ReactFauxDom from "react-faux-dom";
 import { getMax } from "../HelperFunctions";
 
 const margin = { top: 30, right: 10, bottom: 80, left: 50, padding: 1 };
-const width = 850 - margin.left - margin.right,
-  height = 400 - margin.top - margin.bottom;
+
+const wrapper = d3.min([window.innerWidth, window.innerHeight]);
+
+const width = wrapper - margin.left - margin.right,
+  height = wrapper - margin.top - margin.bottom;
 
 function HouseBar(props) {
   const houseData = props.data;

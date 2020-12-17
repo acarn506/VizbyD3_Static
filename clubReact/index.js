@@ -66,7 +66,7 @@ class App extends React.Component {
         contents = <h2>Warning something went wrong!!</h2>;
     }
     return (
-      <div>
+      <>
         <main>
           <Menu
             role={this.state.role}
@@ -76,7 +76,7 @@ class App extends React.Component {
           />
           {contents}
         </main>
-      </div>
+      </>
     );
   }
 }

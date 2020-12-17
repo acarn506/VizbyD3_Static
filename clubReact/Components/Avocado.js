@@ -27,7 +27,6 @@ class Advocado extends React.Component {
 
     myBody.then(function(body) {
       let data = body;
-      console.log("data server", data);
       that.setState({ data: data });
       that.formatData();
     });

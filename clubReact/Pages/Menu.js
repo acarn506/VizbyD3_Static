@@ -55,6 +55,11 @@ function Menu(props) {
                 Membership
               </button>
             </li>
+            <li>
+              <button className="btn" onClick={() => showHandler("Dashboard")}>
+                Dashboard
+              </button>
+            </li>
           </ul>
         </nav>
       );

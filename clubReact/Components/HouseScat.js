@@ -3,16 +3,23 @@ import ReactFauxDom from "react-faux-dom";
 import { getMax, getMin } from "../HelperFunctions";
 import * as d3 from "d3";
 
-const margin = {
-  top: 30,
-  right: 20,
-  bottom: 0,
-  left: 40,
-  padding: 50
+const width = d3.min([window.innerWidth, window.innerHeight]);
+
+const dimensions = {
+  width: width,
+  height: width,
+  margin: {
+    top: 10,
+    right: 10,
+    bottom: 70,
+    left: 70
+  }
 };
 
-const width = 850 - margin.left - margin.right,
-  height = 400 - margin.top - margin.bottom;
+dimensions.boundedWidth =
+  dimensions.width - dimensions.margin.left - dimensions.margin.right;
+dimensions.boundedHeight =
+  dimensions.width - dimensions.margin.top - dimensions.margin.bottom;
 
 function HouseScat(props) {
   // get label names for each axis
@@ -34,27 +41,32 @@ function HouseScat(props) {
   let node = ReactFauxDom.createElement("svg");
   let svg = d3
     .select(node)
-    .attr("height", height + margin.top + margin.bottom)
-    .attr("width", width + margin.left + margin.right)
+    .attr("height", dimensions.height)
+    .attr("width", dimensions.width);
+
+  const bounds = svg
     .append("g")
-    .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
+    .style(
+      "transform",
+      `translate(${dimensions.margin.left}px, ${dimensions.margin.top}px)`
+    );
 
   const xScale = d3
     .scaleLinear()
     .domain([minX, maxX])
-    .range([margin.padding, width]);
+    .range([0, dimensions.boundedWidth]);
 
   const yScale = d3
     .scaleLinear()
     .domain([0, maxY])
-    .range([height - margin.padding, 0]);
+    .range([dimensions.boundedHeight, 0]);
 
   const rScale = d3
     .scaleLinear()
     .domain([0, maxY])
     .range([4, 5]);
 
-  svg
+  bounds
     .selectAll("circle")
     .data(props.data)
     .enter()
@@ -77,14 +89,14 @@ function HouseScat(props) {
     .scale(xScale)
     .ticks(5);
 
-  svg
+  bounds
     .append("g")
     .attr("class", "axis")
-    .attr("transform", "translate(0, " + (height - margin.padding) + ")")
     .call(xAxis)
+    .style("transform", `translateY(${dimensions.boundedHeight}px)`)
     .append("text")
     .attr("class", "xlabel")
-    .attr("x", width)
+    .attr("x", dimensions.boundedWidth)
     .attr("y", -6)
     .text(labels[0]);
 
@@ -94,10 +106,9 @@ function HouseScat(props) {
     .scale(yScale)
     .ticks(10);
 
-  svg
+  bounds
     .append("g")
     .attr("class", "axis")
-    .attr("transform", "translate(" + margin.padding + ",0)")
     .call(yAxis)
     .append("text")
     .attr("class", "ylabel")

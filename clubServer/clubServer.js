@@ -278,16 +278,13 @@ app.delete("/members/:id", checkAdminMiddleware, async function(req, res) {
 let housePrices = Datastore.create("./DB/housePrices.db");
 
 // get just sale prices
-app.get("/housePrices", checkMemberMiddleware, async function(req, res) {
+app.get("/housePrices", async function(req, res) {
   let data = await housePrices.find({}, { SalePrice: 1, _id: 0 });
   res.json(data);
 });
 
 // get house prices data from db
-app.get("/housePrices/:feature", checkMemberMiddleware, async function(
-  req,
-  res
-) {
+app.get("/housePrices/:feature", async function(req, res) {
   let feature = req.params.feature;
   let data = null;
 
