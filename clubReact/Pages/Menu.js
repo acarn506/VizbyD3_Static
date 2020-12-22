@@ -56,8 +56,19 @@ function Menu(props) {
               </button>
             </li>
             <li>
-              <button className="btn" onClick={() => showHandler("Dashboard")}>
+              <button
+                className="btn"
+                onClick={() => showHandler("HousingDashboard")}
+              >
                 Dashboard
+              </button>
+            </li>
+            <li>
+              <button
+                className="btn"
+                onClick={() => showHandler("WeatherDashboard")}
+              >
+                Weather Dashboard
               </button>
             </li>
           </ul>

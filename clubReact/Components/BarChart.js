@@ -1,5 +1,5 @@
 import React from "react";
-import { getMax } from "../HelperFunctions";
+import { getMax } from "../Util/HelperFunctions";
 import * as d3 from "d3";
 
 let sizing = { height: 250, width: 800, padding: 1 };

@@ -1,6 +1,6 @@
 import React from "react";
 import ReactFauxDom from "react-faux-dom";
-import { randomDataScatGenerator, getMax } from "../HelperFunctions";
+import { randomDataScatGenerator, getMax } from "../Util/HelperFunctions";
 import * as d3 from "d3";
 
 let sizing = { height: 300, width: 650, padding: 32 };

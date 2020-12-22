@@ -8,7 +8,8 @@ import Membership from "./Pages/Membership";
 import AdminActivities from "./Pages/AdminActivities";
 import AdminMembership from "./Pages/AdminMembership";
 import Logout from "./Pages/Logout";
-import Dashboard from "./Pages/Dashboard";
+import HousingDashboard from "./Pages/HousingDashboard";
+import WeatherDashboard from "./Pages/WeatherDashboard";
 
 class App extends React.Component {
   constructor(props) {
@@ -59,8 +60,11 @@ class App extends React.Component {
       case "Logout":
         contents = <Logout update={this.loginUpdate.bind(this)} />;
         break;
-      case "Dashboard":
-        contents = <Dashboard />;
+      case "HousingDashboard":
+        contents = <HousingDashboard />;
+        break;
+      case "WeatherDashboard":
+        contents = <WeatherDashboard />;
         break;
       default:
         contents = <h2>Warning something went wrong!!</h2>;

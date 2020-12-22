@@ -3,7 +3,7 @@ import HouseScat from "../Components/HouseScat";
 import HouseBar from "../Components/HouseBar";
 import { urlLocal, urlServer } from "../clientURL";
 
-class Dashboard extends React.Component {
+class HousingDashboard extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -186,4 +186,4 @@ class Dashboard extends React.Component {
   }
 }
 
-export default Dashboard;
+export default HousingDashboard;

@@ -9,7 +9,7 @@ import { urlServer, urlLocal } from "../clientURL";
 import {
   randomDataGenerator,
   randomDataScatGenerator
-} from "../HelperFunctions";
+} from "../Util/HelperFunctions";
 
 class Home extends React.Component {
   constructor(props) {
@@ -24,7 +24,6 @@ class Home extends React.Component {
 
   // fetch state data
   getStateData() {
-    console.log("fetch", urlLocal);
     let that = this;
     // A promise for the response
     let myRes = fetch(urlLocal + "states");

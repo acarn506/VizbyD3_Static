@@ -1,7 +1,7 @@
 import React from "react";
 import * as d3 from "d3";
 import ReactFauxDom from "react-faux-dom";
-import { getMax } from "../HelperFunctions";
+import { getMax } from "../Util/HelperFunctions";
 
 const margin = { top: 30, right: 10, bottom: 80, left: 50, padding: 1 };
 

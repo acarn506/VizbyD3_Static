@@ -12,6 +12,7 @@ const Ajv = require("ajv");
 const memberSchema = require("./ValidationSchemas/Member");
 const ApplicantSchema = require("./ValidationSchemas/Applicant");
 const ActivitySchema = require("./ValidationSchemas/Activity");
+const fetch = require("node-fetch");
 
 // Schema Validation Setup
 let ajv = new Ajv(); // options can be passed, e.g. {allErrors: true}
@@ -52,7 +53,7 @@ const setUpSessionMiddleware = function(req, res, next) {
 
 app.use(setUpSessionMiddleware);
 
-app.use(express.static("public"));
+//app.use(express.static("public"));
 
 // Use this middleware to restrict paths to only logged in users
 const checkMemberMiddleware = function(req, res, next) {
@@ -325,6 +326,19 @@ app.get("/housePrices/:feature", async function(req, res) {
   }
 
   res.json(data);
+});
+
+app.get("/dailyWeather", async function(req, res) {
+  const api_key = process.env.WEATHER_API_KEY;
+
+  const city = "Oakland";
+  const state = "CA";
+  const units = "imperial";
+  const weather_url = `https://api.openweathermap.org/data/2.5/weather?q=${city},${state}&units=${units}&appid=${api_key}`;
+  const weather_response = await fetch(weather_url);
+  const weather_data = await weather_response.json();
+  console.table(weather_data);
+  res.json(weather_data);
 });
 
 host = "localhost";

@@ -1,5 +1,3 @@
-import React from "react";
-
 // Generate random datasets
 export const randomDataGenerator = length => {
   let data = [];

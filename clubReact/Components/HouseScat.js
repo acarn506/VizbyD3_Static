@@ -1,6 +1,6 @@
 import React from "react";
 import ReactFauxDom from "react-faux-dom";
-import { getMax, getMin } from "../HelperFunctions";
+import { getMax, getMin } from "../Util/HelperFunctions";
 import * as d3 from "d3";
 
 const width = d3.min([window.innerWidth, window.innerHeight]);
