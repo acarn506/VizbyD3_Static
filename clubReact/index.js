@@ -70,17 +70,15 @@ class App extends React.Component {
         contents = <h2>Warning something went wrong!!</h2>;
     }
     return (
-      <>
-        <main>
-          <Menu
-            role={this.state.role}
-            show={this.state.show}
-            showHandler={this.showHandler.bind(this)}
-            logoutUpdate={this.loginUpdate.bind(this)}
-          />
-          {contents}
-        </main>
-      </>
+      <main>
+        <Menu
+          role={this.state.role}
+          show={this.state.show}
+          showHandler={this.showHandler.bind(this)}
+          logoutUpdate={this.loginUpdate.bind(this)}
+        />
+        {contents}
+      </main>
     );
   }
 }

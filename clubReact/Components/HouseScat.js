@@ -6,8 +6,8 @@ import * as d3 from "d3";
 const width = d3.min([window.innerWidth, window.innerHeight]);
 
 const dimensions = {
-  width: width,
-  height: width,
+  width: width * 0.8,
+  height: width * 0.8,
   margin: {
     top: 10,
     right: 10,

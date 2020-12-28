@@ -33,10 +33,10 @@ class HousingDashboard extends React.Component {
 
       that.setState({
         barData: data,
-        barDataLoaded: false,
+        barDataLoaded: true,
         houseLength: data.length
       });
-      that.formatBarData();
+      //that.formatBarData();
     });
   }
 
@@ -75,16 +75,24 @@ class HousingDashboard extends React.Component {
 
     for (let i = 1; i <= 6; i++) {
       let count = 0;
+      let count2 = 0;
       let group = i * 100000;
+      let group2 = group + 50000;
 
       count = dataReduce(salePrices, group);
+      count2 = dataReduce(salePrices, group2);
       groupSalePrices.push({ group: group, count: count });
+      groupSalePrices.push({ group: group2, count: count2 });
     }
 
-    for (let j = 5; j > 0; j--) {
+    groupSalePrices.pop();
+
+    for (let j = 10; j > 0; j--) {
       groupSalePrices[j].count =
         groupSalePrices[j].count - groupSalePrices[j - 1].count;
     }
+
+    console.log("group sale prices", groupSalePrices);
 
     this.setState({
       barData: groupSalePrices,
@@ -109,7 +117,7 @@ class HousingDashboard extends React.Component {
 
     return (
       <>
-        <main className="mainContainer">
+        <div className="mainContainer">
           <section className="infoContainer">
             <article className="lenContainer">
               <h3 className="lenHeading"># of House Instances</h3>
@@ -123,7 +131,7 @@ class HousingDashboard extends React.Component {
                 className="salePricebtn"
                 onClick={() => this.getBarData()}
               >
-                <h3 className="lenNumber">SalePrice Chart</h3>
+                <h3 className="salePriceHeader">SalePrice Chart</h3>
               </button>
             </article>
           </section>
@@ -180,7 +188,7 @@ class HousingDashboard extends React.Component {
               </article>
             </section>
           </section>
-        </main>
+        </div>
       </>
     );
   }
