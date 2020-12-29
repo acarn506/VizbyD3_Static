@@ -144,8 +144,24 @@ function HouseBar(props) {
     .attr("x", dimensions.boundedWidth / 2)
     .attr("y", dimensions.margin.bottom - 3)
     .attr("fill", "black")
-    .style("font-size", "1.4em")
+    .style("font-size", "1.2em")
     .text("SalePrice in Hundreds of Thousands");
+
+  const yAxisGenerator = d3.axisLeft().scale(yScale);
+
+  const yAxis = bounds
+    .append("g")
+    .call(yAxisGenerator)
+    .style("font-size", "12px");
+
+  const yAxisLabel = yAxis
+    .append("text")
+    .attr("transform", "rotate(-90)")
+    .attr("dy", ".71em")
+    .attr("y", 6)
+    .attr("fill", "black")
+    .style("font-size", "1.2em")
+    .text("Number of Houses");
 
   return node.toReact();
 }

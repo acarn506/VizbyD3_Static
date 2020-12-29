@@ -9,8 +9,10 @@ class HousingDashboard extends React.Component {
     this.state = {
       barData: [],
       scatData: [],
+      allData: [],
       barDataLoaded: false,
       scatDataLoaded: false,
+      allDataLoaded: false,
       houseLength: 0
     };
   }
@@ -34,9 +36,10 @@ class HousingDashboard extends React.Component {
       that.setState({
         barData: data,
         barDataLoaded: true,
+        scatDataLoaded: false,
+        allDataLoaded: false,
         houseLength: data.length
       });
-      //that.formatBarData();
     });
   }
 
@@ -60,44 +63,36 @@ class HousingDashboard extends React.Component {
       that.setState({
         scatData: data,
         scatDataLoaded: true,
-        barDataLoaded: false
+        barDataLoaded: false,
+        allDataLoaded: false
       });
     });
   }
 
-  formatBarData() {
-    const salePrices = this.state.barData;
+  // fetch all house features
+  getAllData() {
+    let that = this;
+    // A promise for the response
+    let myRes = fetch(urlLocal + "allHouseFeatures");
+    // A promise for the body
+    let myBody = myRes.then(function(res) {
+      // Work with response
+      console.log(`${res.statusText} response for ${res.url}`);
+      // returns a promise for the body
+      return res.json();
+    });
 
-    const dataReduce = (arr, val) =>
-      arr.reduce((acc, cur) => (cur.SalePrice <= val ? acc + 1 : acc), 0);
+    myBody.then(function(body) {
+      let data = body;
 
-    const groupSalePrices = [];
+      console.log("all data", data);
 
-    for (let i = 1; i <= 6; i++) {
-      let count = 0;
-      let count2 = 0;
-      let group = i * 100000;
-      let group2 = group + 50000;
-
-      count = dataReduce(salePrices, group);
-      count2 = dataReduce(salePrices, group2);
-      groupSalePrices.push({ group: group, count: count });
-      groupSalePrices.push({ group: group2, count: count2 });
-    }
-
-    groupSalePrices.pop();
-
-    for (let j = 10; j > 0; j--) {
-      groupSalePrices[j].count =
-        groupSalePrices[j].count - groupSalePrices[j - 1].count;
-    }
-
-    console.log("group sale prices", groupSalePrices);
-
-    this.setState({
-      barData: groupSalePrices,
-      barDataLoaded: true,
-      scatDataLoaded: false
+      that.setState({
+        allData: data,
+        barDataLoaded: false,
+        scatDataLoaded: false,
+        allDataLoaded: true
+      });
     });
   }
 
@@ -132,6 +127,14 @@ class HousingDashboard extends React.Component {
                 onClick={() => this.getBarData()}
               >
                 <h3 className="salePriceHeader">SalePrice Chart</h3>
+              </button>
+            </article>
+            <article>
+              <button
+                className="salePricebtn"
+                onClick={() => this.getAllData()}
+              >
+                <h3 className="salePriceHeader">Features Histogram</h3>
               </button>
             </article>
           </section>

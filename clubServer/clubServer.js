@@ -328,6 +328,25 @@ app.get("/housePrices/:feature", async function(req, res) {
   res.json(data);
 });
 
+// get all house price features
+app.get("/allHouseFeatures", async function(req, res) {
+  let data = await housePrices.find(
+    {},
+    {
+      SalePrice: 1,
+      GrLivArea: 1,
+      OverallQual: 1,
+      TotalBsmtSF: 1,
+      GarageCars: 1,
+      FullBath: 1,
+      YearBuilt: 1,
+      _id: 0
+    }
+  );
+
+  res.json(data);
+});
+
 app.get("/dailyWeather", async function(req, res) {
   const api_key = process.env.WEATHER_API_KEY;
 
