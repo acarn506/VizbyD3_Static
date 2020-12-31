@@ -1,13 +1,13 @@
 import React from "react";
 import ReactFauxDom from "react-faux-dom";
-import { getMax, getMin } from "../Util/HelperFunctions";
+import { getMax, getMin } from "../../Util/HelperFunctions";
 import * as d3 from "d3";
 
 const width = d3.min([window.innerWidth, window.innerHeight]);
 
 const dimensions = {
-  width: width * 0.8,
-  height: width * 0.8,
+  width: width * 0.75,
+  height: width * 0.75,
   margin: {
     top: 10,
     right: 10,

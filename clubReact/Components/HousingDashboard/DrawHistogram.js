@@ -5,8 +5,8 @@ import ReactFauxDom from "react-faux-dom";
 const width = d3.min([window.innerWidth, window.innerHeight]);
 
 const dimensions = {
-  width: width * 0.8,
-  height: width * 0.8,
+  width: width * 0.3,
+  height: width * 0.3,
   margin: {
     top: 30,
     right: 10,
@@ -20,12 +20,11 @@ const dimensions = {
   (dimensions.boundedHeight =
     dimensions.height - dimensions.margin.top - dimensions.margin.bottom);
 
-function HouseBar(props) {
-  const houseData = props.data;
+function DrawHistogram(props) {
+  const metric = props.metric;
+  const data = props.data;
 
-  console.log(houseData);
-
-  const xAccessor = d => d.SalePrice / 1000;
+  const xAccessor = d => d[metric];
   const yAccessor = d => d.length;
 
   let node = ReactFauxDom.createElement("svg");
@@ -42,7 +41,7 @@ function HouseBar(props) {
 
   const xScale = d3
     .scaleLinear()
-    .domain(d3.extent(houseData, xAccessor))
+    .domain(d3.extent(data, xAccessor))
     .range([0, dimensions.boundedWidth])
     .nice();
 
@@ -50,9 +49,9 @@ function HouseBar(props) {
     .histogram()
     .domain(xScale.domain())
     .value(xAccessor)
-    .thresholds(11);
+    .thresholds(8);
 
-  const bins = binsGenerator(houseData);
+  const bins = binsGenerator(data);
 
   console.log("bins", bins);
 
@@ -61,45 +60,6 @@ function HouseBar(props) {
     .domain([0, d3.max(bins, yAccessor)])
     .range([dimensions.boundedHeight, 0])
     .nice();
-
-  /*
-
-  // Add axis
-  const xAxis = d3
-    .axisBottom()
-    .scale(xScaleText)
-    .ticks(11);
-
-  const yAxis = d3
-    .axisLeft()
-    .scale(yScale)
-    .ticks(12);
-
-  bounds
-    .append("g")
-    .attr("transform", "translate(0, " + dimensions.boundedHeight + ")")
-    .attr("class", "axis")
-    .call(xAxis)
-    .append("text")
-    .attr("class", "xlabel")
-    .attr("x", dimensions.boundedWidth / 2)
-    .attr("y", 45)
-    .text("SalePrice ($)");
-
-  bounds
-    .append("g")
-    .attr("class", "axis")
-    .call(yAxis)
-    .append("text")
-    .attr("class", "ylabel")
-    .attr("transform", "rotate(-90)")
-    .attr("dy", ".71em")
-    .attr("y", 6)
-    .text("Number of Houses");
-
-  */
-
-  // combine rects with data
 
   const binsGroup = bounds.append("g");
 
@@ -127,7 +87,7 @@ function HouseBar(props) {
     .text(yAccessor)
     .style("text-anchor", "middle")
     .style("fill", "darkgrey")
-    .style("font-size", "12px")
+    .style("font-size", "11px")
     .style("font-family", "sans-serif");
 
   // Add axis
@@ -137,7 +97,7 @@ function HouseBar(props) {
     .append("g")
     .call(xAxisGenerator)
     .style("transform", `translateY(${dimensions.boundedHeight}px)`)
-    .style("font-size", "12px");
+    .style("font-size", "11px");
 
   const xAxisLabel = xAxis
     .append("text")
@@ -145,7 +105,8 @@ function HouseBar(props) {
     .attr("y", dimensions.margin.bottom - 3)
     .attr("fill", "black")
     .style("font-size", "1.2em")
-    .text("SalePrice in Hundreds of Thousands");
+    .text(metric)
+    .style("text-transform", "capitalize");
 
   const yAxisGenerator = d3.axisLeft().scale(yScale);
 
@@ -160,10 +121,10 @@ function HouseBar(props) {
     .attr("dy", ".71em")
     .attr("y", 6)
     .attr("fill", "black")
-    .style("font-size", "1.2em")
-    .text("Number of Houses");
+    .style("font-size", "0.8em")
+    .text("# of Houses");
 
   return node.toReact();
 }
 
-export default HouseBar;
+export default DrawHistogram;

@@ -60,7 +60,7 @@ function Menu(props) {
                 className="btn"
                 onClick={() => showHandler("HousingDashboard")}
               >
-                Dashboard
+                Housing Dashboard
               </button>
             </li>
             <li>

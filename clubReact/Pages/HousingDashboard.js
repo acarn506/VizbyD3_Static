@@ -1,6 +1,7 @@
 import React from "react";
-import HouseScat from "../Components/HouseScat";
-import HouseBar from "../Components/HouseBar";
+import HouseScat from "../Components/HousingDashboard/HouseScat";
+import HouseBar from "../Components/HousingDashboard/HouseBar";
+import DrawHistogram from "../Components/HousingDashboard/DrawHistogram";
 import { urlLocal, urlServer } from "../clientURL";
 
 class HousingDashboard extends React.Component {
@@ -9,10 +10,8 @@ class HousingDashboard extends React.Component {
     this.state = {
       barData: [],
       scatData: [],
-      allData: [],
       barDataLoaded: false,
       scatDataLoaded: false,
-      allDataLoaded: false,
       houseLength: 0
     };
   }
@@ -37,7 +36,6 @@ class HousingDashboard extends React.Component {
         barData: data,
         barDataLoaded: true,
         scatDataLoaded: false,
-        allDataLoaded: false,
         houseLength: data.length
       });
     });
@@ -63,35 +61,7 @@ class HousingDashboard extends React.Component {
       that.setState({
         scatData: data,
         scatDataLoaded: true,
-        barDataLoaded: false,
-        allDataLoaded: false
-      });
-    });
-  }
-
-  // fetch all house features
-  getAllData() {
-    let that = this;
-    // A promise for the response
-    let myRes = fetch(urlLocal + "allHouseFeatures");
-    // A promise for the body
-    let myBody = myRes.then(function(res) {
-      // Work with response
-      console.log(`${res.statusText} response for ${res.url}`);
-      // returns a promise for the body
-      return res.json();
-    });
-
-    myBody.then(function(body) {
-      let data = body;
-
-      console.log("all data", data);
-
-      that.setState({
-        allData: data,
-        barDataLoaded: false,
-        scatDataLoaded: false,
-        allDataLoaded: true
+        barDataLoaded: false
       });
     });
   }
@@ -126,21 +96,13 @@ class HousingDashboard extends React.Component {
                 className="salePricebtn"
                 onClick={() => this.getBarData()}
               >
-                <h3 className="salePriceHeader">SalePrice Chart</h3>
-              </button>
-            </article>
-            <article>
-              <button
-                className="salePricebtn"
-                onClick={() => this.getAllData()}
-              >
-                <h3 className="salePriceHeader">Features Histogram</h3>
+                <h3 className="salePriceHeader">SalePrice Histogram</h3>
               </button>
             </article>
           </section>
 
           <section className="chartContainer">
-            <h1 className="dashHeading">House Prices Dashboard</h1>
+            <h1 className="dashHeading">House Pricing</h1>
             <section className="houseChart">{chart}</section>
           </section>
 

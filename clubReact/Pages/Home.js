@@ -118,13 +118,20 @@ class Home extends React.Component {
     return (
       <>
         <h1>Home</h1>
-        <h2>Bar Chart with Random Data Built from SVG Elements</h2>
+        <h2>Bar Chart Built from SVG Elements</h2>
         <section className="chartB">
           <BarChart data={this.state.data} />
         </section>
         <button id="updateBtn" onClick={() => this.barUpdate("normal")}>
           Update
         </button>
+        <section className="infoBox">
+          <p className="infoEntry">Description</p>
+          <p className="pageInfo">
+            One of my first D3 bar charts in a basic format without axis's. The
+            bar charts random data can be updated by click.
+          </p>
+        </section>
         <h2>Updateable Bar Chart with Add Additional Bar Functionality</h2>
         <section className="chartD">
           <BarChartUpdate data={this.state.dataUpdate} />
@@ -137,6 +144,13 @@ class Home extends React.Component {
             Add
           </button>
         </section>
+        <section className="infoBox">
+          <p className="infoEntry">Description</p>
+          <p className="pageInfo">
+            One of my first D3 bar charts in a basic format without axis's. The
+            bar charts random data can be updated by click.
+          </p>
+        </section>
 
         <h2>Scatterplot using D3's Scale & Axes</h2>
         <section className="chartC">
@@ -145,6 +159,15 @@ class Home extends React.Component {
         <button id="updateBtn" onClick={() => this.scatUpdate()}>
           Update
         </button>
+
+        <section className="infoBox">
+          <p className="infoEntry">Description</p>
+          <p className="pageInfo">
+            One of my first D3 bar charts in a basic format without axis's. The
+            bar charts random data can be updated by click.
+          </p>
+        </section>
+
         <h2>U.S. State Populations</h2>
         <section>
           <StatesChart data={this.state.stateData} />
@@ -157,9 +180,25 @@ class Home extends React.Component {
             Descending
           </button>
         </section>
+        <section className="infoBox">
+          <p className="infoEntry">Description</p>
+          <p className="pageInfo">
+            One of my first D3 bar charts in a basic format without axis's. The
+            bar charts random data can be updated by click.
+          </p>
+        </section>
+
         <section>
           <h2>Average Avocado Prices in California</h2>
           <Avocado />
+        </section>
+
+        <section className="infoBox">
+          <p className="infoEntry">Description</p>
+          <p className="pageInfo">
+            One of my first D3 bar charts in a basic format without axis's. The
+            bar charts random data can be updated by click.
+          </p>
         </section>
       </>
     );
