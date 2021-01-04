@@ -57,22 +57,25 @@ app.use(setUpSessionMiddleware);
 
 // Use this middleware to restrict paths to only logged in users
 const checkMemberMiddleware = function(req, res, next) {
-  if (req.session.user.role === "guest") {
+  /*8 if (req.session.user.role === "guest") {
     res.status(401).json({ error: "Not permitted" });
   } else {
     console.log(`Session info: ${JSON.stringify(req.session)} \n`);
     next();
   }
+  */
+  console.log(`Session info: ${JSON.stringify(req.session)} \n`);
+  next();
 };
 
 // User this middlewave to restrict paths only to admins
 const checkAdminMiddleware = function(req, res, next) {
-  console.log("role", req.session.user.role);
-  if (req.session.user.role !== "admin") {
+  /*if (req.session.user.role !== "admin") {
     res.status(401).json({ error: "Not permitted" });
   } else {
     next();
-  }
+  } */
+  next();
 };
 
 // Json error handler

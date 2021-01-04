@@ -52,8 +52,6 @@ function HouseBar(props) {
 
   const bins = binsGenerator(houseData);
 
-  console.log("bins", bins);
-
   const yScale = d3
     .scaleLinear()
     .domain([0, d3.max(bins, yAccessor)])

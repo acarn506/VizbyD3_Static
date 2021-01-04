@@ -117,7 +117,7 @@ class Home extends React.Component {
   render() {
     return (
       <>
-        <h1>Home</h1>
+        <h1>Wall of D3</h1>
         <h2>Bar Chart Built from SVG Elements</h2>
         <section className="chartB">
           <BarChart data={this.state.data} />
@@ -128,8 +128,10 @@ class Home extends React.Component {
         <section className="infoBox">
           <p className="infoEntry">Description</p>
           <p className="pageInfo">
-            One of my first D3 bar charts in a basic format without axis's. The
-            bar charts random data can be updated by click.
+            One of my first D3 bar charts where color is used to visualize the
+            magnitude of each bar.
+            <br /> The bar charts random data can be updated by click shifting
+            the layout of the chart.
           </p>
         </section>
         <h2>Updateable Bar Chart with Add Additional Bar Functionality</h2>
@@ -147,8 +149,9 @@ class Home extends React.Component {
         <section className="infoBox">
           <p className="infoEntry">Description</p>
           <p className="pageInfo">
-            One of my first D3 bar charts in a basic format without axis's. The
-            bar charts random data can be updated by click.
+            Similar to the chart above but with a button to update the chart
+            with additional random data.
+            <br /> The chart resizes itself to accommodate the newly added bars.
           </p>
         </section>
 
@@ -163,8 +166,8 @@ class Home extends React.Component {
         <section className="infoBox">
           <p className="infoEntry">Description</p>
           <p className="pageInfo">
-            One of my first D3 bar charts in a basic format without axis's. The
-            bar charts random data can be updated by click.
+            A simple scatter chart implemented to visualize a random generated
+            dataset with an axis to match the generated data.
           </p>
         </section>
 
@@ -183,12 +186,14 @@ class Home extends React.Component {
         <section className="infoBox">
           <p className="infoEntry">Description</p>
           <p className="pageInfo">
-            One of my first D3 bar charts in a basic format without axis's. The
-            bar charts random data can be updated by click.
+            My first chart using actual data that can be sorted and visualized
+            in ascending or descending order. <br />
+            Bars are highlighted when the arrow pointer is touching a specific
+            bar.
           </p>
         </section>
 
-        <section>
+        <section className="chartE">
           <h2>Average Avocado Prices in California</h2>
           <Avocado />
         </section>
@@ -196,8 +201,8 @@ class Home extends React.Component {
         <section className="infoBox">
           <p className="infoEntry">Description</p>
           <p className="pageInfo">
-            One of my first D3 bar charts in a basic format without axis's. The
-            bar charts random data can be updated by click.
+            A line chart displaying the current trends of avocado prices. Axis
+            labels placed within the chart bounds.
           </p>
         </section>
       </>

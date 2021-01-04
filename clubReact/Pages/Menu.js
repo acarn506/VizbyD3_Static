@@ -63,14 +63,6 @@ function Menu(props) {
                 Housing Dashboard
               </button>
             </li>
-            <li>
-              <button
-                className="btn"
-                onClick={() => showHandler("WeatherDashboard")}
-              >
-                Weather Dashboard
-              </button>
-            </li>
           </ul>
         </nav>
       );
@@ -94,8 +86,11 @@ function Menu(props) {
               </button>
             </li>
             <li>
-              <button className="btn" onClick={() => showHandler("Dashboard")}>
-                Dashboard
+              <button
+                className="btn"
+                onClick={() => showHandler("HousingDashboard")}
+              >
+                Housing Dashboard
               </button>
             </li>
             <li>
