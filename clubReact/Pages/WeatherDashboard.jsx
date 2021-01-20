@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from "react";
-import { urlServer, urlLocal } from "../clientURL";
+import { urlServer, urlLocal, urlDeploy } from "../clientURL";
 
 const WeatherDashboard = () => {
-  const [data, loading, error] = useFetch(urlLocal, "dailyWeather");
+  const [data, loading, error] = useFetch(urlDeploy, "dailyWeather");
 
   return (
     <>

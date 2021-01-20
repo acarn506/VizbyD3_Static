@@ -2,7 +2,7 @@ import React from "react";
 import HouseScat from "../Components/HousingDashboard/HouseScat";
 import HouseBar from "../Components/HousingDashboard/HouseBar";
 import DrawHistogram from "../Components/HousingDashboard/DrawHistogram";
-import { urlLocal, urlServer } from "../clientURL";
+import { urlLocal, urlServer, urlDeploy } from "../clientURL";
 
 class HousingDashboard extends React.Component {
   constructor(props) {
@@ -20,7 +20,7 @@ class HousingDashboard extends React.Component {
   getBarData() {
     let that = this;
     // A promise for the response
-    let myRes = fetch(urlLocal + "housePrices");
+    let myRes = fetch(urlDeploy + "housePrices");
     // A promise for the body
     let myBody = myRes.then(function(res) {
       // Work with response
@@ -46,7 +46,7 @@ class HousingDashboard extends React.Component {
     let feature = event;
     let that = this;
     // A promise for the response
-    let myRes = fetch(urlLocal + "housePrices/" + event);
+    let myRes = fetch(urlDeploy + "housePrices/" + event);
     // A promise for the body
     let myBody = myRes.then(function(res) {
       // Work with response
@@ -77,7 +77,7 @@ class HousingDashboard extends React.Component {
     } else if (this.state.scatDataLoaded) {
       chart = <HouseScat data={this.state.scatData} />;
     } else {
-      chart = <h1>Waiting for Data to Load</h1>;
+      chart = <h1 className="loadingScreen">Waiting for Data to Load...</h1>;
     }
 
     return (

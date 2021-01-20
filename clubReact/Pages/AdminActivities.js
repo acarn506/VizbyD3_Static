@@ -1,5 +1,5 @@
 import React from "react";
-import { urlLocal, urlServer } from "../clientURL";
+import { urlLocal, urlServer, urlDeploy } from "../clientURL";
 
 class AdminActivites extends React.Component {
   constructor(props) {
@@ -28,7 +28,7 @@ class AdminActivites extends React.Component {
   getHandler() {
     let that = this;
     // A promise for the response
-    let myRes = fetch(urlLocal + "activities");
+    let myRes = fetch(urlDeploy + "activities");
     // A promise for the body
     let myBody = myRes.then(function(res) {
       // Work with response
@@ -56,7 +56,7 @@ class AdminActivites extends React.Component {
     let remove_id = event.target.value;
 
     // A promise for the response
-    let myRes = fetch(urlLocal + "activities/" + remove_id, {
+    let myRes = fetch(urlDeploy + "activities/" + remove_id, {
       method: "delete"
     });
     // A promise for the body
@@ -87,7 +87,7 @@ class AdminActivites extends React.Component {
       year: this.state.year
     };
     // A promise for the response
-    let myRes = fetch(urlLocal + "activities", {
+    let myRes = fetch(urlDeploy + "activities", {
       method: "POST",
       headers: {
         "Content-Type": "application/json"

@@ -1,5 +1,5 @@
 import React from "react";
-import { urlLocal, urlServer } from "../clientURL";
+import { urlLocal, urlServer, urlDeploy } from "../clientURL";
 
 class Membership extends React.Component {
   constructor(props) {
@@ -21,7 +21,7 @@ class Membership extends React.Component {
       role: "member"
     };
     // A promise for the response
-    let myRes = fetch(urlLocal + "applicant", {
+    let myRes = fetch(urlDeploy + "applicant", {
       method: "POST",
       headers: {
         "Content-Type": "application/json"
@@ -77,6 +77,8 @@ class Membership extends React.Component {
             minLength="6"
             value={this.state.username}
             onChange={() => this.usernameHandler(event)}
+            placeholder="Min length of 6 characters"
+            required
           />
           <label>Password </label>
           <input
@@ -85,6 +87,8 @@ class Membership extends React.Component {
             minLength="8"
             value={this.state.password}
             onChange={() => this.passwordHandler(event)}
+            placeholder="Min length of 8 characters"
+            required
           />
 
           <button

@@ -1,5 +1,5 @@
 import React from "react";
-import { urlLocal, urlServer } from "../clientURL";
+import { urlLocal, urlServer, urlDeploy } from "../clientURL";
 
 function Menu(props) {
   let style = {
@@ -8,7 +8,7 @@ function Menu(props) {
 
   function logoutHandler() {
     // A promise for the response
-    let myRes = fetch(urlLocal + "logout");
+    let myRes = fetch(urlDeploy + "logout");
     // A promise for the body
     let myBody = myRes.then(function(res) {
       // Work with response
@@ -55,14 +55,6 @@ function Menu(props) {
                 Membership
               </button>
             </li>
-            <li>
-              <button
-                className="btn"
-                onClick={() => showHandler("HousingDashboard")}
-              >
-                Housing Dashboard
-              </button>
-            </li>
           </ul>
         </nav>
       );
@@ -80,22 +72,17 @@ function Menu(props) {
             <li>
               <button
                 className="btn"
-                onClick={() => showHandler("ClubActivities")}
-              >
-                Club Activites
-              </button>
-            </li>
-            <li>
-              <button
-                className="btn"
                 onClick={() => showHandler("HousingDashboard")}
               >
                 Housing Dashboard
               </button>
             </li>
             <li>
-              <button className="btn" onClick={() => logoutHandler()}>
-                Logout
+              <button
+                className="btn"
+                onClick={() => showHandler("ClubActivities")}
+              >
+                Data Sources
               </button>
             </li>
           </ul>

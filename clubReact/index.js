@@ -15,7 +15,7 @@ class App extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      role: "guest",
+      role: "member",
       show: "Home",
       user: ""
     };

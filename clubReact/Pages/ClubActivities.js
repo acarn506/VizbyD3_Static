@@ -1,5 +1,5 @@
 import React from "react";
-import { urlLocal, urlServer } from "../clientURL";
+import { urlLocal, urlServer, urlDeploy } from "../clientURL";
 
 class ClubActivities extends React.Component {
   constructor(props) {
@@ -12,7 +12,7 @@ class ClubActivities extends React.Component {
   getHandler() {
     let that = this;
     // A promise for the response
-    let myRes = fetch(urlLocal + "activities");
+    let myRes = fetch(urlDeploy + "activities");
     // A promise for the body
     let myBody = myRes.then(function(res) {
       // Work with response

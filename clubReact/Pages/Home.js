@@ -4,7 +4,7 @@ import BarChartUpdate from "../Components/BarChart_Update";
 import ScatChart from "../Components/ScatChart";
 import StatesChart from "../Components/StatesChart";
 import Avocado from "../Components/Avocado";
-import { urlServer, urlLocal } from "../clientURL";
+import { urlServer, urlLocal, urlDeploy } from "../clientURL";
 
 import {
   randomDataGenerator,
@@ -26,7 +26,7 @@ class Home extends React.Component {
   getStateData() {
     let that = this;
     // A promise for the response
-    let myRes = fetch(urlLocal + "states");
+    let myRes = fetch(urlDeploy + "states");
     // A promise for the body
     let myBody = myRes.then(function(res) {
       // Work with response

@@ -1,5 +1,5 @@
 import React from "react";
-import { urlLocal, urlServer } from "../clientURL";
+import { urlLocal, urlServer, urlDeploy } from "../clientURL";
 
 class Login extends React.Component {
   constructor(props) {
@@ -28,7 +28,7 @@ class Login extends React.Component {
       password: this.state.password
     };
     // A promise for the response
-    let myRes = fetch(urlLocal + "login", {
+    let myRes = fetch(urlDeploy + "login", {
       method: "POST",
       headers: {
         "Content-Type": "application/json"

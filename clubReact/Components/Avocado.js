@@ -1,6 +1,6 @@
 import React from "react";
 import AvocadoChart from "./AvocadoChart";
-import { urlLocal, urlServer } from "../clientURL";
+import { urlLocal, urlServer, urlDeploy } from "../clientURL";
 
 class Advocado extends React.Component {
   constructor(props) {
@@ -13,10 +13,10 @@ class Advocado extends React.Component {
 
   // fetch state data
   getAvocadoData() {
-    console.log(urlLocal);
+    console.log(urlDeploy);
     let that = this;
     // A promise for the response
-    let myRes = fetch(urlLocal + "avocados");
+    let myRes = fetch(urlDeploy + "avocados");
     // A promise for the body
     let myBody = myRes.then(function(res) {
       // Work with response
