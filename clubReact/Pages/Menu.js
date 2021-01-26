@@ -70,6 +70,11 @@ function Menu(props) {
               </button>
             </li>
             <li>
+              <button className="btn" onClick={() => showHandler("WallofD3")}>
+                Wall of D3
+              </button>
+            </li>
+            <li>
               <button
                 className="btn"
                 onClick={() => showHandler("HousingDashboard")}

@@ -82,7 +82,7 @@ class HousingDashboard extends React.Component {
 
     return (
       <>
-        <div className="mainContainer">
+        <div className="DashContainer">
           <section className="infoContainer">
             <article className="lenContainer">
               <h3 className="lenHeading"># of House Instances</h3>
@@ -107,7 +107,7 @@ class HousingDashboard extends React.Component {
           </section>
 
           <section className="btnContainer">
-            <h3 className="header">Correlated SalePrice Features</h3>
+            <h3 className="btnheader">Correlated SalePrice Features</h3>
             <section className="controls">
               <article>
                 <button

@@ -15,17 +15,72 @@ main {
   margin: 0px;
 }
 
+.homebtn {
+  display: flex;
+  align-items: center;
+  justify-content: left;
+}
+
 /*   Home Page  */
+
+.heading1 {
+}
+
+.heading2 {
+  margin: 10px 0px 0px;
+  font-size: 50px;
+}
+
+.intro {
+  text-align: left;
+  margin-top: 30px;
+}
+
+.secA {
+  width: 600px;
+  height: 15em;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  text-align: left;
+  margin-top: 40px;
+}
+
+.secB {
+  width: 600px;
+  height: 15em;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  text-align: left;
+  margin-top: 40px;
+}
+
+.secC {
+  width: 600px;
+  height: 15em;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  text-align: left;
+  margin-top: 40px;
+}
+
+.pagebtn {
+  width: 25%;
+  outline: none;
+  background-color: white;
+  display: inline-block;
+  padding: 10px;
+  cursor: pointer;
+  border-radius: 0.2em;
+}
+
+/*  Wall of D3  */
 
 .heading {
   display: block;
   margin-top: 120px;
-}
-
-h1 {
-  font-family: "Kumbh Sans", sans-serif;
-  color: #61268c;
-  margin: 120px 0px 30px;
 }
 
 h2 {
@@ -289,9 +344,9 @@ thead tr {
   color: purple;
 }
 
-/* Dashboard */
+/* Housing Dashboard */
 
-.mainContainer {
+.DashContainer {
   display: grid;
   grid-template-columns: 20% 60% 20%;
   grid-template-rows: auto;
@@ -372,7 +427,7 @@ h4 {
   border-color: #f1f1f1;
 }
 
-.header {
+.btnheader {
   margin: 10px 0 10px;
 }
 

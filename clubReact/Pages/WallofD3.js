@@ -11,7 +11,7 @@ import {
   randomDataScatGenerator
 } from "../Util/HelperFunctions";
 
-class Home extends React.Component {
+class WallofD3 extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -210,4 +210,4 @@ class Home extends React.Component {
   }
 }
 
-export default Home;
+export default WallofD3;

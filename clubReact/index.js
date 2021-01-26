@@ -1,15 +1,12 @@
 import React from "react";
 import ReactDOM from "react-dom";
 import Menu from "./Pages/Menu";
-import Home from "./Pages/Home";
+import WallofD3 from "./Pages/WallofD3";
 import ClubActivities from "./Pages/ClubActivities";
-import Login from "./Pages/Login";
-import Membership from "./Pages/Membership";
-import AdminActivities from "./Pages/AdminActivities";
-import AdminMembership from "./Pages/AdminMembership";
-import Logout from "./Pages/Logout";
 import HousingDashboard from "./Pages/HousingDashboard";
 import WeatherDashboard from "./Pages/WeatherDashboard";
+import Dashboard from "./Pages/Dashboard";
+import Home from "./Pages/Home";
 
 class App extends React.Component {
   constructor(props) {
@@ -38,50 +35,49 @@ class App extends React.Component {
 
     switch (this.state.show) {
       case "Home":
-        contents = <Home />;
+        contents = <Home showHandler={this.showHandler.bind(this)} />;
+        break;
+
+      case "WallofD3":
+        contents = <WallofD3 />;
         break;
 
       case "ClubActivities":
         contents = <ClubActivities />;
         break;
 
-      case "Login":
-        contents = <Login update={this.loginUpdate.bind(this)} />;
-        break;
-      case "Membership":
-        contents = <Membership />;
-        break;
-      case "AdminActivities":
-        contents = <AdminActivities />;
-        break;
-      case "AdminMembership":
-        contents = <AdminMembership />;
-        break;
-      case "Logout":
-        contents = <Logout update={this.loginUpdate.bind(this)} />;
-        break;
       case "HousingDashboard":
         contents = <HousingDashboard />;
         break;
       case "WeatherDashboard":
         contents = <WeatherDashboard />;
         break;
+      case "Dashboard":
+        contents = <Dashboard />;
+        break;
       default:
         contents = <h2>Warning something went wrong!!</h2>;
     }
     return (
-      <main>
-        <Menu
-          role={this.state.role}
-          show={this.state.show}
-          showHandler={this.showHandler.bind(this)}
-          logoutUpdate={this.loginUpdate.bind(this)}
-        />
-        {contents}
-      </main>
+      <>
+        <article className="homebtn">
+          <button className="btn" onClick={() => this.showHandler("Home")}>
+            Home
+          </button>
+        </article>
+        <main>{contents}</main>
+      </>
     );
   }
 }
 
 // What is this? HTML mixed with JavaScript
 ReactDOM.render(<App />, document.getElementById("root"));
+
+/*
+<Menu
+role={this.state.role}
+show={this.state.show}
+showHandler={this.showHandler.bind(this)}
+logoutUpdate={this.loginUpdate.bind(this)}
+/> */
