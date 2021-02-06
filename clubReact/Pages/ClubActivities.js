@@ -40,10 +40,10 @@ class ClubActivities extends React.Component {
   render() {
     let eventList = this.state.events.map((e, i) => {
       return (
-        <tr key={i}>
-          <td>{e.name}</td>
-          <td>{e.source}</td>
-          <td>{e.year}</td>
+        <tr key={i} className="acttr">
+          <td className="acttd">{e.name}</td>
+          <td className="acttd">{e.source}</td>
+          <td className="acttd">{e.year}</td>
         </tr>
       );
     });
@@ -52,11 +52,11 @@ class ClubActivities extends React.Component {
         <h1>Club Activities</h1>
 
         <table className="actTable">
-          <thead>
-            <tr>
-              <th>Name</th>
-              <th>Source</th>
-              <th>Year</th>
+          <thead className="acthead">
+            <tr className="acttr">
+              <th className="actth">Name</th>
+              <th className="actth">Source</th>
+              <th className="actth">Year</th>
             </tr>
           </thead>
 

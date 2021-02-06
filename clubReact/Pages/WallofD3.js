@@ -1,6 +1,5 @@
 import React from "react";
 import BarChart from "../Components/BarChart";
-import BarChartUpdate from "../Components/BarChart_Update";
 import ScatChart from "../Components/ScatChart";
 import StatesChart from "../Components/StatesChart";
 import Avocado from "../Components/Avocado";
@@ -132,26 +131,6 @@ class WallofD3 extends React.Component {
             magnitude of each bar.
             <br /> The bar charts random data can be updated by click shifting
             the layout of the chart.
-          </p>
-        </section>
-        <h2>Updateable Bar Chart with Add Additional Bar Functionality</h2>
-        <section className="chartD">
-          <BarChartUpdate data={this.state.dataUpdate} />
-        </section>
-        <section>
-          <button id="updateBtn" onClick={() => this.barUpdate("update")}>
-            Update
-          </button>
-          <button id="updateBtn" onClick={() => this.barSingleUpdate()}>
-            Add
-          </button>
-        </section>
-        <section className="infoBox">
-          <p className="infoEntry">Description</p>
-          <p className="pageInfo">
-            Similar to the chart above but with a button to update the chart
-            with additional random data.
-            <br /> The chart resizes itself to accommodate the newly added bars.
           </p>
         </section>
 

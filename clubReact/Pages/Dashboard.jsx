@@ -163,7 +163,7 @@ class DashBoard extends Component {
             <div className="dd-container">
               <Dropdown
                 id="dropdown"
-                title="Select Course"
+                title="Select Course Date"
                 name="course"
                 items={options}
                 onSelect={"this.getStudentList.bind(this)"}

@@ -3,8 +3,8 @@
   display: -ms-grid;
   display: grid;
   -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
   justify-items: center;
   height: 100%;
   --bg: #fcfcfc;
@@ -21,8 +21,8 @@
   display: -ms-grid;
   display: grid;
   -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
   justify-items: center;
   height: 100%;
   --bg: #333333;
@@ -46,15 +46,15 @@
 .statContainer {
   display: -ms-grid;
   display: grid;
-  -ms-grid-columns: (auto)[3];
-      grid-template-columns: repeat(3, auto);
+  -ms-grid-columns: (auto) [3];
+  grid-template-columns: repeat(3, auto);
   -ms-grid-rows: auto;
-      grid-template-rows: auto;
-      grid-template-areas: "A B C";
+  grid-template-rows: auto;
+  grid-template-areas: "A B C";
   justify-items: center;
   -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
 }
 
 .mainContainer {
@@ -62,10 +62,10 @@
   display: -ms-grid;
   display: grid;
   -ms-grid-columns: 40% 60%;
-      grid-template-columns: 40% 60%;
+  grid-template-columns: 40% 60%;
   -ms-grid-rows: 15% auto;
-      grid-template-rows: 15% auto;
-      grid-template-areas: " . listHeader" "dropdown table";
+  grid-template-rows: 15% auto;
+  grid-template-areas: " . listHeader" "dropdown table";
 }
 
 .header {
@@ -138,7 +138,7 @@
   grid-area: listHeader;
   margin: 0px;
   margin-top: 40px;
-  margin-left: 40px;
+  margin-left: 200px;
   color: var(--color-headings);
 }
 
@@ -147,21 +147,21 @@
   -ms-grid-column: 2;
   grid-area: table;
   -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
 }
 
 table {
   background-color: #fcfcfc;
   -ms-grid-column-align: center;
-      justify-self: center;
+  justify-self: center;
   margin-left: 50px;
   width: 80%;
 }
@@ -191,8 +191,8 @@ thead tr {
   display: flex;
   -webkit-box-orient: horizontal;
   -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-          flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
   margin-left: 50px;
   margin-top: 5px;
   width: 81.5%;
@@ -212,15 +212,15 @@ thead tr {
   display: flex;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
   margin-bottom: 25px;
   color: var(--color-text);
 }
 
 .switchTitle {
   -ms-flex-item-align: end;
-      align-self: flex-end;
+  align-self: flex-end;
   font-size: 14px;
   margin: 0px;
   color: var(--color-headings);
@@ -228,7 +228,7 @@ thead tr {
 
 .switch {
   -ms-flex-item-align: end;
-      align-self: flex-end;
+  align-self: flex-end;
 }
 
 .buttonR,
@@ -307,7 +307,7 @@ thead tr {
   display: flex;
   min-height: 38px;
   -ms-flex-wrap: wrap;
-      flex-wrap: wrap;
+  flex-wrap: wrap;
 }
 
 .dd-wrapper .dd-header {
@@ -317,12 +317,12 @@ thead tr {
   border-style: solid;
   border-width: 1px;
   -webkit-box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075) !important;
-          box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075) !important;
+  box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075) !important;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   -ms-flex-pack: distribute;
-      justify-content: space-around;
+  justify-content: space-around;
   cursor: pointer;
   width: 100%;
   padding: 0 5px;
@@ -334,7 +334,7 @@ thead tr {
 
 .dd-wrapper .dd-list {
   -webkit-box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075) !important;
-          box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075) !important;
+  box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075) !important;
   padding: 0;
   margin: 0;
   width: 100%;
@@ -361,8 +361,8 @@ thead tr {
   display: -ms-flexbox;
   display: flex;
   -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
   background-color: white;
   font-size: 16px;
   padding: 15px 20px 15px 20px;
@@ -374,7 +374,8 @@ thead tr {
   border-right: 1px solid #ccc;
 }
 
-.dd-wrapper .dd-list li button:hover, .dd-wrapper .dd-list li button:focus {
+.dd-wrapper .dd-list li button:hover,
+.dd-wrapper .dd-list li button:focus {
   cursor: pointer;
   font-weight: bold;
   background-color: #ccc;

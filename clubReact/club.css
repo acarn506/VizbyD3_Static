@@ -21,59 +21,142 @@ main {
   justify-content: left;
 }
 
+.btnH {
+  outline: none;
+  background-color: #ef86b6;
+
+  color: white;
+  display: inline-block;
+  margin: 10px 40px 0px;
+  padding: 14px;
+  cursor: pointer;
+  border-radius: 0.4em;
+  width: 120px;
+}
+
+.btnH:hover {
+  background-color: rgb(96, 10, 107);
+}
+
 /*   Home Page  */
 
 .heading1 {
+  font-family: "Noto Sans JP", sans-serif;
 }
 
 .heading2 {
-  margin: 10px 0px 0px;
+  margin: 0px 0px 0px;
   font-size: 50px;
+  font-family: "Ubuntu", sans-serif;
 }
 
 .intro {
   text-align: left;
-  margin-top: 30px;
+  margin: 30px 0px 30px;
 }
 
-.secA {
+.projectHeading {
+  width: 600px;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  text-align: left;
+  margin: 90px 0px 100px;
+  background-color: #edf6f7;
+  padding: 4px;
+  border-radius: 0.1em;
+}
+
+.projectSec {
   width: 600px;
   height: 15em;
   display: flex;
   flex-direction: column;
   justify-content: space-around;
   text-align: left;
-  margin-top: 40px;
+  margin: 90px 0px 90px;
 }
 
-.secB {
-  width: 600px;
-  height: 15em;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-around;
-  text-align: left;
-  margin-top: 40px;
+.toolHeader {
+  font-weight: bold;
+  font-size: 20px;
+  font-family: "Ubuntu", sans-serif;
 }
 
-.secC {
-  width: 600px;
-  height: 15em;
+.toolContainer {
   display: flex;
-  flex-direction: column;
-  justify-content: space-around;
-  text-align: left;
-  margin-top: 40px;
+  flex-direction: row;
+  padding: 0;
+}
+
+.toolItem {
+  list-style: none;
+  font-size: 19px;
+  margin-left: 10px;
+  margin-right: 10px;
+  background-color: #edf6f7;
+  padding: 4px;
+  border-radius: 0.1em;
+  font-family: "Noto Sans JP", sans-serif;
+}
+
+li.React {
+  color: #3eb7d8;
+}
+
+li.D3\.js {
+  color: #da7c19;
+}
+
+li.Node\.js {
+  color: #43853d;
+}
+
+li.Mocha {
+  color: #8d6748;
+}
+
+li.Sass {
+  color: #e674a8;
+}
+
+li.SVG {
+  color: #2962ff;
+}
+
+li.NeDB {
+  color: #0d4242;
 }
 
 .pagebtn {
   width: 25%;
   outline: none;
-  background-color: white;
+  color: white;
+  background-color: #98cce4;
   display: inline-block;
   padding: 10px;
   cursor: pointer;
   border-radius: 0.2em;
+}
+
+.pagebtn:hover {
+  background-color: rgb(23, 86, 102);
+  border-color: black;
+}
+
+.sourcesContainer {
+  display: flex;
+  flex-direction: column;
+  margin: 60px 0px 40px;
+  text-align: left;
+  width: 600px;
+}
+
+.sourceHeading {
+  margin: 0px 0px 30px;
+  font-size: 35px;
+  font-family: "Ubuntu", sans-serif;
 }
 
 /*  Wall of D3  */
@@ -307,19 +390,19 @@ div.bar {
   border-collapse: collapse;
 }
 
-td {
+.acttd {
   padding-left: 50px;
   padding-right: 50px;
   font-size: 18px;
   border: solid 2px rgb(14, 190, 235);
 }
 
-th {
+.actth {
   font-size: 20px;
   border: solid 2px rgb(14, 190, 235);
 }
 
-thead tr {
+.acthead .acttr {
   color: black;
   font-weight: bold;
 }

@@ -61,7 +61,7 @@ class App extends React.Component {
     return (
       <>
         <article className="homebtn">
-          <button className="btn" onClick={() => this.showHandler("Home")}>
+          <button className="btnH" onClick={() => this.showHandler("Home")}>
             Home
           </button>
         </article>
