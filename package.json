@@ -1,0 +1,23 @@
+{
+  "dependencies": {
+    "react-router-dom": "^6.3.0"
+  },
+  "name": "vizbyd3_static",
+  "description": "",
+  "version": "1.0.0",
+  "main": "index.js",
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/acarn506/VizbyD3_Static.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/acarn506/VizbyD3_Static/issues"
+  },
+  "homepage": "https://github.com/acarn506/VizbyD3_Static#readme"
+}

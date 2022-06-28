@@ -19,7 +19,8 @@
     "parcel-bundler": "^1.12.4",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
-    "react-faux-dom": "^4.5.0"
+    "react-faux-dom": "^4.5.0",
+    "react-router-dom": "^6.3.0"
   },
   "devDependencies": {
     "cssnano": "^4.1.10"
